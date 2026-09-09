@@ -1,5 +1,12 @@
-<%- include ('partials/header.ejs') %>
-<%- include ('partials/navbar.ejs') %>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+</head>
+<body>
+    <a href="/"><< Voltar</a>
     <h1 style="text-align: center;">Página de produtos</h1>
 
     <!-- Comentário em EJS -->
@@ -15,4 +22,5 @@
         <p>Preço: <%= produto.preco %></p>
         <br>
       <% }) %>
-    <%- include ('partials/footer.ejs') %>
+</body>
+</html>

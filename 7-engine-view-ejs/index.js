@@ -60,10 +60,6 @@ app.get("/perfil", (req, res) =>{
     res.render('perfil');
 });
 
-app.get("/servicos", (req, res) =>{
-    res.render('servicos');
-});
-
 
 
 
