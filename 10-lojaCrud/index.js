@@ -1,11 +1,21 @@
 // Importando o Express
 import express from 'express';
+// importando arquivo de conexão do sequelize
+import connection from './config/sequelize-config.js';
 // Iniciando o Express 
-const app = express() 
+const app = express() ;
 // Define o EJS como Renderizador de páginas
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 // Define o uso da pasta "public" para uso de arquivos estáticos
-app.use(express.static('public'))
+app.use(express.static('public'));
+
+// realizando a conexão com o banco de dados
+connection.authenticate().then(() =>{
+    //sucesso na promessa:
+    console.log("Conexão com o banco de dados realizada com sucesso!");
+}).catch((error) => {
+    console.log(`Ocorreu um erro ao se conectar ao banco de dados. Erro: ${error}`);
+})
 
 import ClienteController from './controllers/ClienteController.js';
 import ProdutosController from './controllers/ProdutosController.js';
