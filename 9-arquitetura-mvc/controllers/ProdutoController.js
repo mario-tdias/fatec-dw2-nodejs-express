@@ -1,5 +1,8 @@
+import express from "express";
+const rota = express.Router();
 
-app.get("/produtos", (req, res) =>{
+// rota de produtos 
+rota.get("/produtos", (req, res) =>{
 
     // lista de produtos (dados mockados)
     // futuramente os dados virão do banco de dados
@@ -18,3 +21,6 @@ app.get("/produtos", (req, res) =>{
 
     
 });
+
+// exportando o módulo
+export default rota;

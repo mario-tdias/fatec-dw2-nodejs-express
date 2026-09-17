@@ -1,15 +1,36 @@
 // index.js :arquivo principal do back-end
 
 // importando o express.js para o projeto
-const express = require("express") // forma clássica (CommonJS Modules);
+// const express = require("express") // forma clássica (CommonJS Modules);
 
+import express from "express" // forma de importação do ES6
 const app = express() // Criando uma instância do Express
+
+// importando o controller de produto
+import ProdutoController from "./controllers/ProdutoController.js";
+
+import ClienteController from "./controllers/ClienteController.js";
+
+import ServicoController from "./controllers/ServicoController.js";
+
+import UsuarioController from "./controllers/UsuarioController.js";
 
 // configurando o ejs
 app.set('view engine', 'ejs');
 
 // configurando a pasta "public" para arquivos estáticos
 app.use(express.static("public"));
+
+// configurando as rotas
+// inicializando as rotas de produto
+app.use("/", ProdutoController);
+
+app.use("/", ClienteController);
+
+app.use("/", ServicoController);
+
+app.use("/", UsuarioController);
+
 
 // aqui irão as rotas do site
 // rota principal
@@ -18,14 +39,6 @@ app.get("/", (req, res) =>{
     res.render('index');
 });
 
-// rota de produtos
-
-
-// rota clientes
-
-
-
-// rota perfil
 
 
 

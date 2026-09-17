@@ -1,4 +1,7 @@
-app.get("/clientes", (req, res) =>{
+import express from "express";
+const rota = express.Router();
+
+rota.get("/clientes", (req, res) =>{
 
     const clientes = [
         {nome: "Diego Max", cpf: "999.999.999-99"},
@@ -12,3 +15,5 @@ app.get("/clientes", (req, res) =>{
         clientes: clientes,
     });
 });
+
+export default rota;
