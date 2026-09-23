@@ -30,6 +30,12 @@ import ClienteController from './controllers/ClienteController.js';
 import ProdutosController from './controllers/ProdutosController.js';
 import PedidosController from './controllers/PedidosController.js';
 
+// importandos os models
+
+import Cliente from './models/Cliente.js';
+import Pedido from './models/Pedido.js';
+import Produto from './models/Produto.js';
+
 app.use("/",ClienteController);
 app.use("/",ProdutosController);
 app.use("/",PedidosController);
