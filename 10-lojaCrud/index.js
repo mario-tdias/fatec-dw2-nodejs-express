@@ -15,7 +15,16 @@ connection.authenticate().then(() =>{
     console.log("Conexão com o banco de dados realizada com sucesso!");
 }).catch((error) => {
     console.log(`Ocorreu um erro ao se conectar ao banco de dados. Erro: ${error}`);
-})
+});
+
+// criando o banco de dados se ele não existir
+const DB_NAME = "loja";
+connection.query(`CREATE DATABASE IF NOT EXISTS ${DB_NAME};`).then(() => {
+    console.log(`O banco de dados ${DB_NAME} está criado!`);
+}).catch((error) => {
+    console.log(`Ocorreu um erro ao criar o banco de dados. Erro: ${error}`);
+});
+
 
 import ClienteController from './controllers/ClienteController.js';
 import ProdutosController from './controllers/ProdutosController.js';
