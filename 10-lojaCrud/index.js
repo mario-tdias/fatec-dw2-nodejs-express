@@ -36,6 +36,9 @@ import Cliente from './models/Cliente.js';
 import Pedido from './models/Pedido.js';
 import Produto from './models/Produto.js';
 
+// Configurando o express para permitir dados através de formulários
+app.use(express.urlencoded({extend: false}));
+
 app.use("/",ClienteController);
 app.use("/",ProdutosController);
 app.use("/",PedidosController);
